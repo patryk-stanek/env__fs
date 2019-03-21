@@ -1,5 +1,4 @@
 var fs = require('fs');
-var StatMode = require('stat-mode');
 var EventEmitter = require('events').EventEmitter;
 var OSinfo = require('./modules/OSinfo');
 
@@ -10,37 +9,6 @@ emitter.on('beforeCommand', function(instruction) {
 emitter.on('afterCommand', function() {
     console.log('Finished command');
 });
-
-//odczyt uprawnien pliku
-// fs.stat('./cat.jpg', function(err, stats) {
-//     var statMode = new StatMode(stats);
-//     console.log(statMode.toString());
-// });
-
-//wypisanie w konsoli zawartosci pliku, kodowanie utf-8
-// fs.readFile('./txt.txt', 'utf-8', function(err, data) {
-//     console.log(data);
-// });
-
-//zapisanie tekstu w pliku
-// fs.writeFile('./txt.txt', 'But the ball is sadly small', function(err) {
-//     if (err) throw err;
-//     console.log('Saved!');
-// });
-
-// fs.readFile('./txt.txt', 'utf-8', function(err, data) {
-//     console.log('Dane przed zapisem!'.blue);
-//     console.log(data);
-//     //appendFile różnie od writeFile fakt że dodaje treść do pliku a nie ją nadpisuje
-//     fs.appendFile('./txt.txt', '\nA tak wyglądają po zapisie!', function(err) {
-//         if (err) throw err;
-//         console.log('Zapisano!'.red);
-//         fs.readFile('./txt.txt', 'utf-8', function(err, data) {
-//             console.log('Dane po zapisie'.green);
-//             console.log(data);
-//         });
-//     });
-// });
 
 fs.readdir('./', 'utf-8', function(err, files) {
     console.log('List plików w katalogu:'.yellow);

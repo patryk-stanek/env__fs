@@ -12,7 +12,7 @@ function timeCalc(time) {
             x = x + minutes + 'm';
         default:
             x = x + seconds + 's';
-    };
+    }
     return x;
 };
 
